@@ -40,9 +40,9 @@ class User extends SlackMethod implements SlackUser
      *
      * @return array
      */
-    public function lists()
+    public function lists($cursor = "", $limit = 20, $presence = true)
     {
-        return $this->method('list');
+        return $this->method('list', ['cursor' => $cursor, 'limit' => $limit, 'presence' => $presence]);
     }
 
     /**
